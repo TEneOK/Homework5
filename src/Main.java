@@ -1,5 +1,3 @@
-import java.sql.SQLOutput;
-
 public class Main {
     public static void main(String[] args) {
         System.out.println("-----Task 1=====");
@@ -9,32 +7,28 @@ public class Main {
         } else {
             System.out.println("Установите версию приложения для iOS по ссылке");
         }
+
         System.out.println("-----Task 2=====");
         int clientDeviceYear = 2015;
-        if (clientDeviceYear > 2015 && clientOS == 0) {
-            System.out.println("Установите версию приложения для Android по ссылке");
-        }
-        if (clientDeviceYear <= 2015 && clientOS == 0) {
-            System.out.println("Установите облегченную версию приложения для Android по ссылке");
+        if (clientDeviceYear >= 2015 && clientOS == 0) {
+            System.out.println("Установите версию приложения для IOS по ссылке");
+        } else if (clientDeviceYear < 2015 && clientOS == 0) {
+            System.out.println("Установите облегченную версию приложения для IOS по ссылке");
         }
 
-        if (clientDeviceYear > 2015 && clientOS == 1) {
+        if (clientDeviceYear >= 2015 && clientOS == 1) {
             System.out.println("Установите версию приложения для Android по ссылке");
-        }
-        if (clientDeviceYear <= 2015 && clientOS == 1) {
+        } else if (clientDeviceYear < 2015 && clientOS == 1)
             System.out.println("Установите облегченную версию приложения для Android по ссылке");
-        }
+
         System.out.println("-----Task 3=====");
-        int year = 2021;
-        if (year % 4 == 0) {
-            if (year % 100 == 0) {
-            }
-            if (year % 400 == 0) {
-            }
-            System.out.println(year + " год является високосным");
-        } else {
+        int year = 2222;
+        if (year < 1584) {
             System.out.println(year + " год не является високосным");
+        } else if (year % 400 == 0 || year % 4 == 0 || year % 100 != 0) {
+            System.out.println(year + " год является високосным");
         }
+
         System.out.println("-----Task 4=====");
         int deliveryDistance = 95;
         int day = 20;
@@ -51,6 +45,7 @@ public class Main {
                 deliveryDays++;
             }
             System.out.println("Потребуется дней: " + deliveryDays);
+
             System.out.println("-----Task 5=====");
             int monthNumber = 12;
 
