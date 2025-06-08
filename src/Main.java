@@ -16,18 +16,17 @@ public class Main {
             System.out.println("Установите облегченную версию приложения для IOS по ссылке");
         }
 
-        if (clientDeviceYear >= 2015 && clientOS == 1) {
+        else if (clientDeviceYear >= 2015 && clientOS == 1) {
             System.out.println("Установите версию приложения для Android по ссылке");
         } else if (clientDeviceYear < 2015 && clientOS == 1)
             System.out.println("Установите облегченную версию приложения для Android по ссылке");
 
         System.out.println("-----Task 3=====");
-        int year = 2222;
-        if (year < 1584) {
-            System.out.println(year + " год не является високосным");
-        } else if (year % 400 == 0 || year % 4 == 0 || year % 100 != 0) {
+        int year = 2001;
+        if (year > 1584 && (year % 4 == 0 || year % 400 == 0)) {
             System.out.println(year + " год является високосным");
-        }
+        } else
+            System.out.println(year + " год не является високосным");
 
         System.out.println("-----Task 4=====");
         int deliveryDistance = 95;
@@ -37,58 +36,31 @@ public class Main {
         int deliveryDays = 1;
         if (deliveryDistance > threeDay) {
             System.out.println("Доставки нет.");
-        } else {
-            if (deliveryDistance > day) {
+        } else if (deliveryDistance > day) {
                 deliveryDays++;
-            }
-            if (deliveryDistance > twoDay) {
+            } else if (deliveryDistance > twoDay) {
                 deliveryDays++;
             }
             System.out.println("Потребуется дней: " + deliveryDays);
 
             System.out.println("-----Task 5=====");
-            int monthNumber = 12;
+            int monthNumber = 11;
 
             switch (monthNumber) {
-                case 1:
+                case 1,2,12:
                     System.out.println("Зима");
                     break;
-                case 2:
-                    System.out.println("Зима");
-                    break;
-                case 3:
+                case 3,4,5:
                     System.out.println("Весна");
                     break;
-                case 4:
-                    System.out.println("Весна");
-                    break;
-                case 5:
-                    System.out.println("Весна");
-                    break;
-                case 6:
+                case 6,7,8:
                     System.out.println("Лето");
                     break;
-                case 7:
-                    System.out.println("Лето");
-                    break;
-                case 8:
-                    System.out.println("Лето");
-                    break;
-                case 9:
+                case 9,10,11:
                     System.out.println("Осень");
-                    break;
-                case 10:
-                    System.out.println("Осень");
-                    break;
-                case 11:
-                    System.out.println("Осень");
-                    break;
-                case 12:
-                    System.out.println("Зима");
                     break;
                 default:
                     System.out.println("такого нету");
             }
         }
     }
-}
